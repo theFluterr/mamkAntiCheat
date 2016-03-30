@@ -2,10 +2,98 @@
 <html>
   <head>
     <title>Exam page</title>
-    <link rel="stylesheet" href="src/stylesheets/styles.min.css" type='text/css'>
+   		<style>
+   			.top-title {font-size: 200%;
+   						padding: 30px;}
+   			.answer-text-card{
+   						margin-top: 200;
+   						position: relative;
+   						width: 80%;
+    			
+    					margin-left: 300px;
+
+   						margin-top: 50px;
+
+   			}
+   			.answer-text-field{
+   						padding-top: 50px;
+   			}
+   			.answer-text-question{
+   						
+   						font-size: 150%;
+   						text-align: center;
+   			}
+   			.card-text-question-title {
+   				color: #29b6f6;
+   				font-size: 130%;
+   				margin-right: 30px;
+   				line-height: 3px;
+   			}
+   		</style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="src/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <!-- <link href="src/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+
     <script src="src/javascripts/jquery-2.2.0.min.js"></script>
   </head>
   <body>
+  	<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="right hide-on-med-and-down"><img src="src/assets/logo4.png" height="200px" width="200px"></a> 
+    <ul class="brand-logo">   
+    		<div class="top-title"><p align= "left">OSPF Exam</p></div>
+    </ul>
+ 
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+<div class="answer-text-card"> 
+		<div class="row">
+       	 <div class="col s12 m7">
+       	 	<div class="card medium">
+       		 
+         		 
+          		<div class="card-image">
+          				<div class="card-text-question-title"><p>Question 23</p></div>
+             			
+          		</div>
+
+            	<div class="card-content">
+            		<div class="answer-text-question">
+            				  <p>Explain how OSPF works in multi-area networks</p>
+            		 </div>
+            		
+            		<div class="answer-text-field">
+              			<div class="input-field col s12">
+            				<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+           					<label for="textarea1">Your answer</label>
+          				</div>
+          			</div>
+            	</div>
+           
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  
+
+  <!--<div class="answer-text-field">
+  	<div class="">
+  		<div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+            <label for="textarea1">Your answer</label>
+          </div>
+  </div>-->
+
+  <script src = "src/javascripts/materialize.js"></script>
   </body>
 </html>
 

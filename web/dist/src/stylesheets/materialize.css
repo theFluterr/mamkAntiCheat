@@ -7461,7 +7461,7 @@ nav .input-field label.active {
 
 .navbar-fixed {
   position: relative;
-  height: 56px;
+  height: 104px;
   z-index: 998;
 }
 
@@ -7471,11 +7471,11 @@ nav .input-field label.active {
 
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 64px;
-    line-height: 64px;
+    height: 204px;
+    line-height: 104px;
   }
   .navbar-fixed {
-    height: 64px;
+    height: 204px;
   }
 }
 
@@ -7764,6 +7764,10 @@ small {
   font-size: 24px;
   font-weight: 300;
 }
+.card-title {
+  margin-top: 10px;
+  margin-left: 10px;
+}
 
 .card .card-title.activator {
   cursor: pointer;
@@ -7771,6 +7775,7 @@ small {
 
 .card.small, .card.medium, .card.large {
   position: relative;
+  width: 100%;
 }
 
 .card.small .card-image, .card.medium .card-image, .card.large .card-image {
@@ -7779,8 +7784,8 @@ small {
 }
 
 .card.small .card-content, .card.medium .card-content, .card.large .card-content {
-  max-height: 40%;
-  overflow: hidden;
+  max-height: 60%;
+  overflow: visible;
 }
 
 .card.small .card-action, .card.medium .card-action, .card.large .card-action {
@@ -7820,7 +7825,7 @@ small {
 }
 
 .card .card-image .card-title {
-  color: #fff;
+  color: #29b6f6;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -8775,8 +8780,8 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #26a69a;
-  box-shadow: 0 1px 0 0 #26a69a;
+  border-bottom: 1px solid #29b6f6;
+  box-shadow: 0 1px 0 0 #29b6f6;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -8791,7 +8796,7 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #26a69a;
+  color: #29b6f6;
 }
 
 input:not([type]).valid, input:not([type]):focus.valid,
