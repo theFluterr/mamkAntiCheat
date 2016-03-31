@@ -15,14 +15,17 @@
 body {
   font-family: 'Roboto-regular';
 }
- .top-title {font-size: 120%;
-              padding: 10px;}
+ 		.top-title {
+ 			  font-size: 120%;
+              line-height: 10px;
+              margin-left: 20%;
+              
+          }
         .answer-text-card{
-              margin-top: 200;
               position: relative;
               margin-left: auto;
               margin-right: auto;
-              margin-top: 50px;
+              margin-top: 100px;
               width: 90%;
 
         }
@@ -43,4 +46,8 @@ body {
         }
         .card-radio-container {
           padding-top: 40px;
+        }
+        .logo-pic {
+        	margin-top: -20px;
+        	margin-left: 40px;
         }

@@ -7472,11 +7472,11 @@ nav .input-field label.active {
 
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 180px;
-    line-height: 104px;
+    height: 80px;
+    line-height: 80px;
   }
   .navbar-fixed {
-    height: 180px;
+    height: 80px;
   }
 }
 
@@ -8242,6 +8242,7 @@ button.btn-floating {
   opacity: 0;
   position: absolute;
   z-index: 999;
+  margin-top: 80px;
   will-change: width, height;
 }
 
@@ -8271,7 +8272,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #26a69a;
+  color: #29b6f6;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
