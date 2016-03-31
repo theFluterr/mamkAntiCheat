@@ -2,47 +2,18 @@
 <html>
   <head>
     <title>Exam page</title>
-   		<style>
-   			.top-title {font-size: 120%;
-   						padding: 10px;}
-   			.answer-text-card{
-   						margin-top: 200;
-   						position: relative;
-   						width: 80%;
-    			
-    					margin-left: 300px;
-
-   						margin-top: 50px;
-
-   			}
-   			.answer-text-field{
-   						padding-top: 50px;
-   			}
-   			.answer-text-question{
-   						color: #d1d1d1;
-   						font-size: 150%;
-   						text-align: center;
-   			}
-   			.card-text-question-title {
-   				color: #29b6f6;
-   				font-size: 130%;
-   				margin-right: 30px;
-   				line-height: 3px;
-   				padding-left: 10px;
-   			}
-   		</style>
+     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="src/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-   <!-- <link href="src/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
-
+    <link rel="stylesheet" type="text/css" href="src/stylesheets/styles.css">
     <script src="src/javascripts/jquery-2.2.0.min.js"></script>
   </head>
   <body>
-  	<body>
+    <body>
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="right hide-on-med-and-down"><img src="src/assets/logo4.png" height="180px" width="180px"></a> 
     <ul class="brand-logo">   
-    		<div class="top-title"><p align= "left">OSPF Exam</p></div>
+        <div class="top-title"><p align= "left">OSPF Exam</p></div>
     </ul>
  
 
@@ -54,42 +25,64 @@
   </nav>
 
 <div class="answer-text-card"> 
-		<div class="row">
-       	 <div class="col s12 m7">
-       	 	<div class="card medium">
-       		 
-         		 
-          		<div class="card-image">
-          				<div class="card-text-question-title"><p>Question 23</p></div>
-             			
-          		</div>
+    <div class="row">
+         <div class="col s12 m7">
+          <div class="card medium">
+           
+             
+              <div class="card-image">
+                  <div class="card-text-question-title"><p>Question 24</p></div>
+                  
+              </div>
 
-            	<div class="card-content">
-            		<div class="answer-text-question">
-            				  <p>Explain how OSPF works in multi-area networks</p>
-            		 </div>
-            		
-            		<div class="answer-text-field">
-              			<div class="input-field col s12">
-            				<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-           					<label for="textarea1">Your answer</label>
-          				</div>
-          			</div>
-            	</div>
+              <div class="card-content">
+                <div class="answer-text-question">
+                      <p>Where do we usually use the OSPF routing protocol?</p>
+                 </div>
+                
+                <form class="card-radio-container" action="#">
+                    <p>
+                        <input type="checkbox" id="test5" />
+                        <label for="test5">In automobiles</label>
+                    </p>
+                    <p>
+                         <input type="checkbox" id="test4"  />
+                         <label for="test4">In the kitchen</label>
+                    </p>
+                    <p>
+                         <input type="checkbox" id="test3"  />
+                         <label for="test3">Near Microsoft Office</label>
+                    </p>
+                    <p>
+                         <input type="checkbox" id="test2"  />
+                         <label for="test2">When interconnecting the networks</label>
+                    </p>
+                    <p>
+                         <input type="checkbox" id="test1" />
+                         <label for="test1">While walking with the dog in the park</label>
+                    </p>
+                    </form>
+              </div>
            
             <div class="card-action">
-              <a align = "left" href="#" >Previous</a>
-              <a align = "right" href="#">Next</a>
+              <a align = "left" href="textbased.html" >Previous</a>
+              <a align = "right" href="textbased.html">Next</a>
             </div>
           </div>
         </div>
       </div>
       </div>
+
+       <div class="fixed-action-btn tooltipped" style="bottom: 45px; right: 24px;" data-position="left" data-delay="50" data-tooltip="Submit">
+            <a class="btn-floating  btn-large blue waves-effect waves-light blue " >
+
+                <i class="large material-icons">done</i>
+            </a>    
   
 
   <!--<div class="answer-text-field">
-  	<div class="">
-  		<div class="input-field col s12">
+    <div class="">
+      <div class="input-field col s12">
             <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
             <label for="textarea1">Your answer</label>
           </div>
@@ -98,4 +91,3 @@
   <script src = "src/javascripts/materialize.js"></script>
   </body>
 </html>
-

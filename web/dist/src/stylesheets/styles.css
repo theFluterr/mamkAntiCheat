@@ -12,3 +12,33 @@
 
 body {
   font-family: 'Roboto-regular'; }
+
+.top-title {
+  font-size: 120%;
+  padding: 10px; }
+
+.answer-text-card {
+  margin-top: 200;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 90%; }
+
+.answer-text-field {
+  padding-top: 50px; }
+
+.answer-text-question {
+  color: #d1d1d1;
+  font-size: 150%;
+  text-align: center; }
+
+.card-text-question-title {
+  color: #29b6f6;
+  font-size: 130%;
+  margin-right: 30px;
+  line-height: 3px;
+  padding-left: 10px; }
+
+.card-radio-container {
+  padding-top: 40px; }
