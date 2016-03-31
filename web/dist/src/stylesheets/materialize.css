@@ -7327,6 +7327,7 @@ nav i.material-icons {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
 @media only screen and (min-width: 993px) {
@@ -7355,6 +7356,7 @@ nav .brand-logo {
   font-size: 2.1rem;
   padding: 0;
   white-space: nowrap;
+  margin-left: 25%;
 }
 
 nav .brand-logo.center {
@@ -8157,7 +8159,7 @@ button.btn-floating {
 
 .fixed-action-btn {
   position: fixed;
-  right: 23px;
+  right: 48%;
   bottom: 23px;
   padding-top: 15px;
   margin-bottom: 0;

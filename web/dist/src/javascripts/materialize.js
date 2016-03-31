@@ -670,7 +670,9 @@ if ($) {
   }; // End dropdown plugin
 
   $(document).ready(function(){
-    $('.dropdown-button').dropdown();
+    $('.dropdown-button').dropdown({
+    	hover:true,
+    });
   });
 }( jQuery ));;(function($) {
     var _stack = 0,
@@ -1381,7 +1383,7 @@ $(document).ready(function(){
               targetLeft = origin.offset().left + originWidth/2 - tooltipWidth/2;
               newCoordinates = repositionWithinScreen(targetLeft, targetTop, tooltipWidth, tooltipHeight);
 
-              tooltipVerticalMovement = '-10px';
+              tooltipVerticalMovement = '10px';
               backdrop.css({
                 borderRadius: '14px 14px 0 0',
                 transformOrigin: '50% 90%',
