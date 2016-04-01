@@ -46,7 +46,7 @@
              <form method="post" class="card-radio-container" action="#">
               <?php 
               print_r($_POST);
-              if(isset($_POST['prev_c']))
+              if(isset($_POST['next_c']))
                 echo '<div class="card-image">
                   <div class="card-text-question-title"><p>Question 24</p></div>
                   
@@ -59,28 +59,28 @@
                 
                 
                     <p>
-                        <input type="checkbox" id="test5" />
+                        <input name="24_1" value="1" type="checkbox" id="test5" />
                         <label for="test5">In automobiles</label>
                     </p>
                     <p>
-                         <input type="checkbox" id="test4"  />
+                         <input name="24_2" value="1" type="checkbox" id="test4"  />
                          <label for="test4">In the kitchen</label>
                     </p>
                     <p>
-                         <input type="checkbox" id="test3"  />
+                         <input name="24_3" value="1" type="checkbox" id="test3"  />
                          <label for="test3">Near Microsoft Office</label>
                     </p>
                     <p>
-                         <input type="checkbox" id="test2"  />
+                         <input name="24_4" value="1" type="checkbox" id="test2"  />
                          <label for="test2">When interconnecting the networks</label>
                     </p>
                     <p>
-                         <input type="checkbox" id="test1" />
+                         <input name="24_5" value="1" type="checkbox" id="test1" />
                          <label for="test1">While walking with the dog in the park</label>
                     </p>
                     
               </div>';
-              elseif(isset($_POST['next_c']))
+              else
               echo '<div class="card-image">
                   <div class="card-text-question-title"><p>Question 23</p></div>
                   
@@ -93,7 +93,7 @@
                 
                 <div class="answer-text-field">
                     <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                    <textarea  name="23" value="1" id="textarea1" class="materialize-textarea" length="120"></textarea>
                     <label for="textarea1">Your answer</label>
                   </div>
                 </div>
