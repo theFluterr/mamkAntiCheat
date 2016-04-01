@@ -43,13 +43,14 @@
          <div class="col s12 m7">
             <div class="card medium">
            
-             
-              <div class="card-image">
+             <form method="post" class="card-radio-container" action="#">
+              <?php 
+              print_r($_POST);
+              if(isset($_POST['prev_c']))
+                echo '<div class="card-image">
                   <div class="card-text-question-title"><p>Question 24</p></div>
                   
               </div>
-              
-              <form method='post' class="card-radio-container" action="#">
               
               <div class="card-content">
                 <div class="answer-text-question">
@@ -78,11 +79,29 @@
                          <label for="test1">While walking with the dog in the park</label>
                     </p>
                     
+              </div>';
+              elseif(isset($_POST['next_c']))
+              echo '<div class="card-image">
+                  <div class="card-text-question-title"><p>Question 23</p></div>
+                  
               </div>
-           
+
+              <div class="card-content">
+                <div class="answer-text-question">
+                      <p>Explain how OSPF works in multi-area networks</p>
+                 </div>
+                
+                <div class="answer-text-field">
+                    <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                    <label for="textarea1">Your answer</label>
+                  </div>
+                </div>
+              </div>';
+           ?>
             <div class="card-action">
-              <input type='submit' style='align:left' value='Next' name='next_card'>
-              <input type='submit' style='align:right' value='Next' name='next_card'>
+              <input type='submit' style='align:left; background:none; border:none; #color: #29b6f6; font-size: 130%;' value='Previous' name='prev_c'>
+              <input type='submit' style='align:left; background:none; border:none; #color: #29b6f6; font-size: 130%;' value='Next' name='next_c'>
             </div>
             </form>
           </div>
