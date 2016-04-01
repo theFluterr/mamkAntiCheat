@@ -48,13 +48,15 @@
                   <div class="card-text-question-title"><p>Question 24</p></div>
                   
               </div>
-
+              
+              <form method='post' class="card-radio-container" action="#">
+              
               <div class="card-content">
                 <div class="answer-text-question">
                       <p>Where do we usually use the OSPF routing protocol?</p>
                  </div>
                 
-                <form class="card-radio-container" action="#">
+                
                     <p>
                         <input type="checkbox" id="test5" />
                         <label for="test5">In automobiles</label>
@@ -75,13 +77,14 @@
                          <input type="checkbox" id="test1" />
                          <label for="test1">While walking with the dog in the park</label>
                     </p>
-                    </form>
+                    
               </div>
            
             <div class="card-action">
-              <a align = "left" href="textbased.html" >Previous</a>
-              <a align = "right" href="textbased.html">Next</a>
+              <input type='submit' style='align:left' value='Next' name='next_card'>
+              <input type='submit' style='align:right' value='Next' name='next_card'>
             </div>
+            </form>
           </div>
         </div>
       </div>
@@ -92,7 +95,7 @@
 
                 <i class="large material-icons">done</i>
             </a>    
-  
+
 
   <!--<div class="answer-text-field">
     <div class="">
