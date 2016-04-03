@@ -66,7 +66,7 @@
                     <label for="username">Username</label>
                  </div>
 
-                <div class="input-field col s12" style="margin-top: 20%;">
+                <div class="input-field col s12" style="margin-top: 10%;">
                     <input name='password' id="password" type="password" class="validate">
                     <label for="password">Password</label>
                 </div>
@@ -74,7 +74,7 @@
             	</div>
            
             <div class="card-action">
-              <a class = "waves-effect waves-light btn"  href="#" style="float:right">Continue</a>
+              <input class = "waves-effect waves-light btn"  type="submit" value='Continue' style="float:right">
         
             </div>
 			</form>
