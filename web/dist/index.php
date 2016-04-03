@@ -11,7 +11,7 @@
 			{
 				session_start();
 				$_SESSION['user_key']=$special_key_obj['special_key'];
-				header('page.php');
+				header('Location:http://mamk-acs.cloudapp.net/page.php');
 			}
 		}
 	}
