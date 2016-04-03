@@ -191,16 +191,16 @@
 
                 <i class="large material-icons">done</i>
             </a>    
-
+        <input id='finish_val' type='hidden' name='finish'>
 		<script>
 			document.getElementById("done_form").addEventListener("click", function(){
 				document.getElementById("finish_val").value='true';
-				document.getElementById("test_form").submit();
+				setTimeout(function() { document.getElementById("test_form").submit() }, 500)
 			});
 		</script>
 			
   <script src = "src/javascripts/materialize.js"></script>
-  <input id='finish_val' type='hidden' name='finish' value='false'>
+
   </form>
   </body>
 </html>
