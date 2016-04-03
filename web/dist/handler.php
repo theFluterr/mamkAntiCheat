@@ -11,7 +11,7 @@ if(isset($_POST['check_adminKEY102ao']))
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
 				$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
-				echo '<p>'.($answer_obj['answer_value']).'<br><b>'.($time).'</b></p>';
+				echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($answer_obj['answer_value']).'<br><b>'.($time).'</b></p>';
 			}
 		}
 	}
@@ -38,7 +38,7 @@ if(isset($_POST['check_adminKEY102ao']))
 			}
 		}
 		similar_text($answeropt,$answer2,$percentage);
-		echo '<p>'.($answeropt).'<br><b>'.($time).'</b><br><b>Checked closest student answers: 1st pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
+		echo '<p>Explain how OSPF works in multi-area networks'.($answeropt).'<br><b>'.($time).'</b><br><b>1st pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
 	}
 	if($_POST['check_adminKEY102ao']=='3') 
 	{
@@ -49,7 +49,7 @@ if(isset($_POST['check_adminKEY102ao']))
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
 				$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
-				echo '<p>'.($answer_obj['answer_value']).'<br><b>'.($time).'</b></p>';
+				echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($answer_obj['answer_value']).'<br><b>'.($time).'</b></p>';
 			}
 		}
 	}
@@ -76,7 +76,7 @@ if(isset($_POST['check_adminKEY102ao']))
 			}
 		}
 		similar_text($answeropt,$answer2,$percentage);
-		echo '<p>'.($answer2).'<br><b>'.($time2).'</b><br><b>Checked closest student answers: 2nd pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
+		echo '<p>Explain how OSPF works in multi-area networks'.($answer2).'<br><b>'.($time2).'</b><br><b>2nd pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
 	}
 }
 
