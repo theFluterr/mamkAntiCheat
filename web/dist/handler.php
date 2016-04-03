@@ -11,7 +11,8 @@ if(isset($_POST['check_adminKEY102ao']))
 		{
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
-				echo '<p>'.($answer_obj['answer_value']).'</p>';
+				$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
+				echo '<p>'.($answer_obj['answer_value']).' - <b>'.($time).'</b></p>';
 			}
 		}
 	}
@@ -24,7 +25,8 @@ if(isset($_POST['check_adminKEY102ao']))
 		{
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
-				echo '<p>'.($answer_obj['answer_value']).'</p>';
+				$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
+				echo '<p>'.($answer_obj['answer_value']).' - <b>'.($time).'</b></p>';
 			}
 		}
 	}
