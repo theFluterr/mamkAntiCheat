@@ -45,6 +45,7 @@ if(isset($_POST['check_adminKEY102ao']))
 		}
 		$result_c=array_intersect($keyl2,$keyll2);
 		$result_c=count($result_c);
+		$result_c-=1;
 		echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($ans_f).'<b>'.($time).'</b><br><b>1st pc -<b>'.($result_c*20).'%</p>';
 	}
 	if($_POST['check_adminKEY102ao']=='2') 
@@ -115,6 +116,7 @@ if(isset($_POST['check_adminKEY102ao']))
 		}
 		$result_c=array_intersect($keyl2,$keyll2);
 		$result_c=count($result_c);
+		$result_c-=1;
 		echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($ans_f).'<b>'.($time).'</b><br><b>2nd pc -<b>'.($result_c*20).'%</p>';
 	}
 	if($_POST['check_adminKEY102ao']=='4') 
