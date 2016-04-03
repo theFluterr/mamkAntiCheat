@@ -72,7 +72,18 @@
                 <p style="font-size : 150%; color: #29b6f6;  padding-left:10%;">PC 2</p>
               </div>
 
-              <div id='pc2_card' class="card-content"></div>
+              <div class="card-content">
+					<ul class="collapsible popout" data-collapsible="accordion">
+						  <li>
+							   <div class="collapsible-header"><i class="material-icons">toc</i>Question 1</div>
+							   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+						 </li>
+						  <li>
+							   <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
+							   <div id='pc2_card' class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+						 </li>
+					</ul>
+				</div>
 				<script>  
 					var check_key="2";
 					function show()  
