@@ -45,7 +45,7 @@
       
           <ul 
 		   <?php
-		   if($_POST['finish']!='true')
+		   if($_POST['finish']=='true')
 			{
 				echo " style='visibility:hidden;' ";
 			}
@@ -79,7 +79,7 @@
 					if(isset($_POST['qid']) and $_POST['qid']==2)
 					{
 						$answer_value=$_POST['2_ans'];
-						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('1','2','$time','$answer_value')";
+						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('$userid','2','$time','$answer_value')";
 						$conn->query($query);
 					}
 					if(isset($_POST['qid']) and $_POST['qid']==1)
@@ -90,14 +90,14 @@
 							$ans_list[]="1_".($index)."_ans";
 						}
 						$answer_value=serialize($ans_list);
-						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('1','1','$time','$answer_value')";
+						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('$userid','1','$time','$answer_value')";
 						$conn->query($query);
 					}
 					if(isset($_POST['finish']) and $_POST['finish']=='true')
 					{
-						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='1' and question_id='1' ORDER by unix_time DESC";
+						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='$userid' and question_id='1' ORDER by unix_time DESC";
 						$conn->query($query);
-						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='1' and question_id='2' ORDER by unix_time DESC";
+						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='$userid' and question_id='2' ORDER by unix_time DESC";
 						$conn->query($query);
 						echo '<div class="card-content" style="text-align:center;"><h1>Thank you for passing the test!</h1></div>';
 						session_start();
@@ -111,7 +111,7 @@
 					{
 						if(isset($_POST['quest_1']) or !isset($_POST['quest_2']))
 						{
-							$query = "SELECT DISTINCT answer_value FROM test_log_answers WHERE user_id='1' and question_id='1' ORDER BY unix_time DESC LIMIT 1";
+							$query = "SELECT DISTINCT answer_value FROM test_log_answers WHERE user_id='$userid' and question_id='1' ORDER BY unix_time DESC LIMIT 1";
 							$answer_value = $conn->query($query);
 							if ($answer_value->num_rows > 0)
 							{
@@ -172,7 +172,7 @@
 						}
 						if(isset($_POST['quest_2']))
 						{
-							$query = "SELECT DISTINCT answer_value FROM test_log_answers WHERE user_id='1' and question_id='2' ORDER BY unix_time DESC LIMIT 1";
+							$query = "SELECT DISTINCT answer_value FROM test_log_answers WHERE user_id='$userid' and question_id='2' ORDER BY unix_time DESC LIMIT 1";
 							$answer_value = $conn->query($query);
 							if ($answer_value->num_rows > 0)
 							{
@@ -226,7 +226,7 @@
 
        <div
 		<?php 
-		 if($_POST['finish']!='true')
+		 if($_POST['finish']=='true')
 			{
 				echo " style='display:none;' ";
 			}
