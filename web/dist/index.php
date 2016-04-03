@@ -10,11 +10,11 @@
   </head>
   
 
-    <body>
-
+    <body id='body'>
+	<form id='test_form' method="post" style='padding:0;' class="card-radio-container" action="#">
         <ul id="dropdown1" class="dropdown-content">
-                <li><a href="textbased.html">Question 23</a></li>
-                <li><a href="index.html">Question 24</a></li> 
+                <li><input style='outline:none; background:none; border:none; font-size: 16px; color: #29b6f6; display: block; line-height: 22px; padding: 14px 16px;' type='submit' name='quest_1' value='Question 1'></li>
+                <li><input style='outline:none; background:none; border:none; font-size: 16px; color: #29b6f6; display: block; line-height: 22px; padding: 14px 16px;' type='submit' name='quest_2' value='Question 2'></li> 
         </ul>
   
       <nav class="light-blue lighten-1" role="navigation">
@@ -42,88 +42,165 @@
      <div class="row">
          <div class="col s12 m7">
             <div class="card medium">
-           
-             <form method="post" class="card-radio-container" action="#">
               <?php 
-              print_r($_POST);
-              if(isset($_POST['next_c']))
-                echo '<div class="card-image">
-                  <div class="card-text-question-title"><p>Question 24</p></div>
-                  
-              </div>
-              
-              <div class="card-content">
-                <div class="answer-text-question">
-                      <p>Where do we usually use the OSPF routing protocol?</p>
-                 </div>
-                
-                
-                    <p>
-                        <input name="24_1" value="1" type="checkbox" id="test5" />
-                        <label for="test5">In automobiles</label>
-                    </p>
-                    <p>
-                         <input name="24_2" value="1" type="checkbox" id="test4"  />
-                         <label for="test4">In the kitchen</label>
-                    </p>
-                    <p>
-                         <input name="24_3" value="1" type="checkbox" id="test3"  />
-                         <label for="test3">Near Microsoft Office</label>
-                    </p>
-                    <p>
-                         <input name="24_4" value="1" type="checkbox" id="test2"  />
-                         <label for="test2">When interconnecting the networks</label>
-                    </p>
-                    <p>
-                         <input name="24_5" value="1" type="checkbox" id="test1" />
-                         <label for="test1">While walking with the dog in the park</label>
-                    </p>
-                    
-              </div>';
-              else
-              echo '<div class="card-image">
-                  <div class="card-text-question-title"><p>Question 23</p></div>
-                  
-              </div>
+					echo "<input id='finish_val' type='hidden' name='finish' value='false'>";
+					$conn = new mysqli('10.169.0.84', 'gossipmi_dbu', '2301437qwe', 'gossipmi_dbn');
+					date_default_timezone_set("Europe/Helsinki"); 
+					$time=time()+(3*3600);
+					//print_r($_POST);
+					if(isset($_POST['qid']) and $_POST['qid']==2)
+					{
+						$answer_value=$_POST['2_ans'];
+						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('1','2','$time','$answer_value')";
+						$conn->query($query);
+					}
+					if(isset($_POST['qid']) and $_POST['qid']==1)
+					{
+						for($index=1; $index<6; $index++)
+						{
+							if($_POST["1_".($index)."_ans"]=='1')
+							$ans_list[]="1_".($index)."_ans";
+						}
+						$answer_value=serialize($ans_list);
+						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('1','1','$time','$answer_value')";
+						$conn->query($query);
+					}
+					if(isset($_POST['finish_val']) and $_POST['finish_val']=='true')
+					{
+						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='1' and question_id='1' ORDER by unix_time DESC";
+						$conn->query($query);
+						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='1' and question_id='2' ORDER by unix_time DESC";
+						$conn->query($query);
+						echo '<div class="card-content"><h1>Thank you for passing the test!</h1></div>';
+					}
+					else
+					{
+						if(isset($_POST['quest_1']) or !isset($_POST['quest_2']))
+						{
+							$query = "SELECT DISTINCT answer_value FROM test_log_answers WHERE user_id='1' and question_id='1' ORDER BY unix_time DESC LIMIT 1";
+							$answer_value = $conn->query($query);
+							if ($answer_value->num_rows > 0)
+							{
+								while($answer_val = $answer_value->fetch_assoc()) 
+								{
+									$answer=unserialize($answer_val['answer_value']);
+								}
+							}
+							//print_r($answer);
+							$keylist=array();
+							if(isset($answer))
+							foreach($answer as $key=>$value)
+							{
+								$keylist[]=$value;
+							}
+							
+							echo '
+								<input type="hidden" name="qid" value="1">
+								<div class="card-image">
+									<div class="card-text-question-title"><p>Question 1</p></div>
+								</div>
+						  
+								<div class="card-content">
+									<div class="answer-text-question">
+										<p>Where do we usually use the OSPF routing protocol?</p>
+									</div>
+									<p>
+										<input ';
+										if (in_array("1_1_ans", $keylist)) echo 'checked';
+										echo ' name="1_1_ans" value="1" type="checkbox" id="test5" />
+										<label for="test5">In automobiles</label>
+									</p>
+									<p>
+										<input ';
+										if (in_array("1_2_ans", $keylist)) echo 'checked';
+										echo ' name="1_2_ans" value="1" type="checkbox" id="test4"  />
+										<label for="test4">In the kitchen</label>
+									</p>
+									<p>
+										<input ';
+										if (in_array("1_3_ans", $keylist)) echo 'checked';
+										echo ' name="1_3_ans" value="1" type="checkbox" id="test3"  />
+										<label for="test3">Near Microsoft Office</label>
+									</p>
+									<p>
+										<input ';
+										if (in_array("1_4_ans", $keylist)) echo 'checked';
+										echo ' name="1_4_ans" value="1" type="checkbox" id="test2"  />
+										<label for="test2">When interconnecting the networks</label>
+									</p>
+									<p>
+										<input ';
+										if (in_array("1_5_ans", $keylist)) echo 'checked';
+										echo ' name="1_5_ans" value="1" type="checkbox" id="test1" />
+										<label for="test1">While walking with the dog in the park</label>
+									</p>
+								</div>';
+						}
+						if(isset($_POST['quest_2']))
+						{
+							$query = "SELECT DISTINCT answer_value FROM test_log_answers WHERE user_id='1' and question_id='2' ORDER BY unix_time DESC LIMIT 1";
+							$answer_value = $conn->query($query);
+							if ($answer_value->num_rows > 0)
+							{
+								while($answer_val = $answer_value->fetch_assoc()) 
+								{
+									$answer=$answer_val['answer_value'];
+								}
+							}
+							echo '
+									<input type="hidden" name="qid" value="2">
+									<div class="card-image">
+										<div class="card-text-question-title"><p>Question 2</p></div>
+									</div>
 
-              <div class="card-content">
-                <div class="answer-text-question">
-                      <p>Explain how OSPF works in multi-area networks</p>
-                 </div>
-                
-                <div class="answer-text-field">
-                    <div class="input-field col s12">
-                    <textarea  name="23" value="1" id="textarea1" class="materialize-textarea" length="120"></textarea>
-                    <label for="textarea1">Your answer</label>
-                  </div>
-                </div>
-              </div>';
-           ?>
+									<div class="card-content">
+										<div class="answer-text-question">
+											<p>Explain how OSPF works in multi-area networks</p>
+										</div>
+						
+										<div class="answer-text-field">
+											<div class="input-field col s12">
+												<textarea name="2_ans" id="textarea1" class="materialize-textarea" length="120">'.($answer).'</textarea>
+												<label for="textarea1">Your answer</label>
+											</div>
+										</div>
+									</div>';
+						}
+					}
+				?>
             <div class="card-action">
-              <input type='submit' style='align:left; background:none; border:none; #color: #29b6f6; font-size: 130%;' value='Previous' name='prev_c'>
-              <input type='submit' style='align:left; background:none; border:none; #color: #29b6f6; font-size: 130%;' value='Next' name='next_c'>
+				<?php
+				if(isset($_POST['quest_2']))
+				{
+					echo "<input id='prev_c' type='submit' style='align:left; background:none; border:none; color: #29b6f6; font-size: 130%;' value='Previous' name='prev_c'>";
+					echo "<input type='hidden' name='quest_1' value='1'>";
+				}
+				if(!isset($_POST['quest_2']) or isset($_POST['quest_1']))
+				{
+					echo "<input id='next_c' type='submit' style='align:left; background:none; border:none; color: #29b6f6; font-size: 130%;' value='Next' name='next_c'>";
+					echo "<input type='hidden' name='quest_2' value='1'>";
+				}
+				?>
             </div>
-            </form>
           </div>
         </div>
       </div>
       </div>
 
-       <div class="fixed-action-btn tooltipped submit-btn" data-position="top" data-delay="50" data-tooltip="Submit">
+       <div id='done_form' class="fixed-action-btn tooltipped submit-btn" data-position="top" data-delay="50" data-tooltip="Submit">
             <a class="btn-floating  btn-large blue waves-effect waves-light blue " >
 
                 <i class="large material-icons">done</i>
             </a>    
 
-
-  <!--<div class="answer-text-field">
-    <div class="">
-      <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-            <label for="textarea1">Your answer</label>
-          </div>
-  </div>-->
-
+		<script>
+			document.getElementById("done_form").addEventListener("click", function(){
+				document.getElementById("finish_val").value='true';
+				document.getElementById("test_form").submit();
+			});
+		</script>
+			
   <script src = "src/javascripts/materialize.js"></script>
+  </form>
   </body>
 </html>
