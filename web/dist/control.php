@@ -101,10 +101,10 @@
 					}
 
 					$(document).ready(function(){  
-						show(1);  
-						setInterval('show(1)',5000);  
-						show(2);  
-						setInterval('show(2)',5000);  
+						show('1');  
+						setInterval('show(\'1\')',5000);  
+						show('2');  
+						setInterval('show(\'2\')',5000);  
 					});  
 				</script>
            
