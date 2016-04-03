@@ -66,9 +66,15 @@
                     <label for="username">Username</label>
                  </div>
 
-                <div class="input-field col s12" style="margin-top: 10%;">
+                <div class="input-field col s12" style="margin-top: 5%;">
                     <input name='password' id="password" type="password" class="validate">
                     <label for="password">Password</label>
+				<?php
+					if(isset($_POST['username']) or isset($_POST['password']))
+					{
+						echo "<h5 style='text-align: center;font-weight: bold;color: red;'>INCORRECT CREDENTIALS</h5>";
+					}
+				?>
                 </div>
 				
             	</div>

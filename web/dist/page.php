@@ -31,16 +31,15 @@
 
     <body id='body'>
 	<form id='test_form' method="post" style='padding:0;' class="card-radio-container" action="#">
-        <ul id="dropdown1" class="dropdown-content">
-		 <?php 
+        <?php 
 		 if($_POST['finish']!='true')
 			{
+				echo '<ul id="dropdown1" class="dropdown-content">';
 				echo "<li><input style='outline:none; background:none; border:none; font-size: 16px; color: #29b6f6; display: block; line-height: 22px; padding: 14px 16px;' type='submit' name='quest_1' value='Question 1'></li>";
                 echo "<li><input style='outline:none; background:none; border:none; font-size: 16px; color: #29b6f6; display: block; line-height: 22px; padding: 14px 16px;' type='submit' name='quest_2' value='Question 2'></li> ";
+				echo "</ul>";
 			}
 		 ?>
-        </ul>
-  
       <nav class="light-blue lighten-1" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="right hide-on-med-and-down"><img src="src/assets/logo4.png" height="180px" width="180px" class = "logo-pic"></a> 
       
