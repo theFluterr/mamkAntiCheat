@@ -82,37 +82,11 @@
 						 </li>
 						  <li>
 							   <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
-							   <div id='pc2_card2' class="collapsible-body">
-							   <?php
-							   $conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
-							   $query = "SELECT DISTINCT * FROM test_log_answers WHERE user_id='2' and question_id='2' ORDER by unix_time DESC LIMIT 1";
-								$answer = $conn->query($query);
-								if ($answer->num_rows > 0)
-								{
-									while($answer_obj = $answer->fetch_assoc()) 
-									{
-										$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
-										$answer=$answer_obj['answer_value'];
-									}
-								}
-								$query = "SELECT DISTINCT * FROM test_log_answers WHERE user_id='1' and question_id='2' ORDER by unix_time DESC LIMIT 1";
-								$answer = $conn->query($query);
-								if ($answer->num_rows > 0)
-								{
-									while($answer_obj = $answer->fetch_assoc()) 
-									{
-										$time2 = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
-										$answer2=$answer_obj['answer_value'];
-									}
-								}
-								similar_text($answer,$answer2,$percentage);
-								echo '<p>'.($answer).'<br><b>'.($time).'</b><br><b>Checked closest student answers: <b>'.($percentage).'%</b></b></p>';
-								?>
-							   </div>
+							   <div id='pc2_card2' class="collapsible-body"></div>
 						 </li>
 					</ul>
 				</div>
-				<?php /*<script>  
+				<script>  
 					function show(check_key, pccard)  
 					{  
 						$.ajax({  
@@ -138,7 +112,7 @@
 						startloop();
 						setInterval('startloop()',5000);
 					});  
-				</script>*/?>
+				</script>
            
             <div class="card-action">
                     <a class = "waves-effect waves-light btn"  href="#" style="margin-left: 35%;">block</a>
