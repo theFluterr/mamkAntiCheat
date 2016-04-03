@@ -3,7 +3,6 @@
 	{
 		$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
 		$query = "SELECT DISTINCT special_key FROM SPMas_users WHERE username='".($_POST['username'])."' and password='".($_POST['password'])."' LIMIT 1";
-		echo "<script>alert('".($query)."')</script>";
 		$special_key = $conn->query($query);
 		if ($special_key->num_rows > 0)
 		{
