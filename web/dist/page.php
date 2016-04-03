@@ -43,7 +43,14 @@
       <nav class="light-blue lighten-1" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="right hide-on-med-and-down"><img src="src/assets/logo4.png" height="180px" width="180px" class = "logo-pic"></a> 
       
-          <ul class="left hide-on-med-and-down">
+          <ul 
+		   <?php
+		   if($_POST['finish']!='true')
+			{
+				echo " style='visibility:hidden;' ";
+			}
+			?>
+		  class="left hide-on-med-and-down">
               <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Go to question<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
 
@@ -217,7 +224,14 @@
       </div>
       </div>
 
-       <div id='done_form' class="fixed-action-btn tooltipped submit-btn" data-position="top" data-delay="50" data-tooltip="Submit">
+       <div
+		<?php 
+		 if($_POST['finish']!='true')
+			{
+				echo " style='display:none;' ";
+			}
+		?>
+	   id='done_form' class="fixed-action-btn tooltipped submit-btn" data-position="top" data-delay="50" data-tooltip="Submit">
             <a class="btn-floating  btn-large blue waves-effect waves-light blue " >
 
                 <i class="large material-icons">done</i>
