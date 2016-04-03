@@ -43,7 +43,6 @@
          <div class="col s12 m7">
             <div class="card medium">
               <?php 
-              		print_r($_POST);
 					$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
 					date_default_timezone_set("Europe/Helsinki"); 
 					$time=time()+(3*3600);
@@ -71,7 +70,7 @@
 						$conn->query($query);
 						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='1' and question_id='2' ORDER by unix_time DESC";
 						$conn->query($query);
-						echo '<div class="card-content"><h1>Thank you for passing the test!</h1></div>';
+						echo '<div class="card-content" style="text-align:center;"><h1>Thank you for passing the test!</h1></div>';
 					}
 					else
 					{
@@ -170,15 +169,18 @@
 				?>
             <div class="card-action">
 				<?php
-				if(isset($_POST['quest_2']))
+				if(isset($_POST['finish']) and $_POST['finish']=='true')
 				{
-					echo "<input id='prev_c' type='submit' style='align:left; background:none; border:none; color: #29b6f6; font-size: 130%;' value='Previous' name='prev_c'>";
-					echo "<input type='hidden' name='quest_1' value='1'>";
-				}
-				if(!isset($_POST['quest_2']) or isset($_POST['quest_1']))
-				{
-					echo "<input id='next_c' type='submit' style='align:left; background:none; border:none; color: #29b6f6; font-size: 130%;' value='Next' name='next_c'>";
-					echo "<input type='hidden' name='quest_2' value='1'>";
+					if(isset($_POST['quest_2']))
+					{
+						echo "<input id='prev_c' type='submit' style='align:left; background:none; border:none; color: #29b6f6; font-size: 130%;' value='Previous' name='prev_c'>";
+						echo "<input type='hidden' name='quest_1' value='1'>";
+					}
+					if(!isset($_POST['quest_2']) or isset($_POST['quest_1']))
+					{
+						echo "<input id='next_c' type='submit' style='align:left; background:none; border:none; color: #29b6f6; font-size: 130%;' value='Next' name='next_c'>";
+						echo "<input type='hidden' name='quest_2' value='1'>";
+					}
 				}
 				?>
             </div>
