@@ -44,7 +44,7 @@
             <div class="card medium">
               <?php 
 					echo "<input id='finish_val' type='hidden' name='finish' value='false'>";
-					$conn = new mysqli('mamk-acs.cloudapp.net', 'mamk-acs', 'matti', 'root');
+					$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
 					date_default_timezone_set("Europe/Helsinki"); 
 					$time=time()+(3*3600);
 					//print_r($_POST);
