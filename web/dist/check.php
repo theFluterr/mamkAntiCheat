@@ -1,4 +1,4 @@
 <?php
-$conn = new mysqli('localhost', 'mamk-acs', 'matti', 'root');
+$conn = new mysqli('localhost', 'root', 'matti', 'mamk-acs');
 print_r($conn);
 ?>
