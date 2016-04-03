@@ -13,6 +13,9 @@
 			}
 		}
 	}
+	else{
+		header('Location:http://mamk-acs.cloudapp.net/');
+	}
 ?>
 <!DOCTYPE html>
 <html>
