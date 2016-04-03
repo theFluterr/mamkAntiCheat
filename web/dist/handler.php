@@ -11,7 +11,18 @@ if(isset($_POST['check_adminKEY102ao']))
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
 				$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
-				echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($answer_obj['answer_value']).'<br><b>'.($time).'</b></p>';
+				$answerarr=unserialize($answer_obj['answer_value']);
+				foreach($answerarr as $key=>$value)
+				{
+					$keylist[]=$value;
+				}
+				if (in_array("1_1_ans", $keylist)) {$ans_f='In automobiles; '; $keyl2=1;}
+				if (in_array("1_2_ans", $keylist)) {$ans_f.='In the kitchen; '; $keyl2=2;}
+				if (in_array("1_3_ans", $keylist)) {$ans_f.='Near Microsoft Office; '; $keyl2=3;}
+				if (in_array("1_4_ans", $keylist)) {$ans_f.='When interconnecting the networks; '; $keyl2=4;}
+				if (in_array("1_5_ans", $keylist)) {$ans_f.='While walking with the dog in the park;'; $keyl2=5;}
+				$ans_f.='<br>';
+				echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($ans_f).'<br><b>'.($time).'</b></p>';
 			}
 		}
 	}
@@ -38,7 +49,7 @@ if(isset($_POST['check_adminKEY102ao']))
 			}
 		}
 		similar_text($answeropt,$answer2,$percentage);
-		echo '<p>Explain how OSPF works in multi-area networks'.($answeropt).'<br><b>'.($time).'</b><br><b>1st pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
+		echo '<p>Explain how OSPF works in multi-area networks<br>'.($answeropt).'<br><b>'.($time).'</b><br><b>1st pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
 	}
 	if($_POST['check_adminKEY102ao']=='3') 
 	{
@@ -49,6 +60,11 @@ if(isset($_POST['check_adminKEY102ao']))
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
 				$time = gmdate("Y-m-d H:i:s", $answer_obj['unix_time']);
+				$answerarr=unserialize($answer_obj['answer_value']);
+				foreach($answerarr as $key=>$value)
+				{
+					$keylist[]=$value;
+				}
 				echo '<p>Where do we usually use the OSPF routing protocol?<br>'.($answer_obj['answer_value']).'<br><b>'.($time).'</b></p>';
 			}
 		}
@@ -76,7 +92,7 @@ if(isset($_POST['check_adminKEY102ao']))
 			}
 		}
 		similar_text($answeropt,$answer2,$percentage);
-		echo '<p>Explain how OSPF works in multi-area networks'.($answer2).'<br><b>'.($time2).'</b><br><b>2nd pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
+		echo '<p>Explain how OSPF works in multi-area networks<br>'.($answer2).'<br><b>'.($time2).'</b><br><b>2nd pc -<b>'.(round($percentage, 2)).'%</b></b></p>';
 	}
 }
 
