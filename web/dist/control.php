@@ -47,11 +47,11 @@
                       <ul class="collapsible popout" data-collapsible="accordion">
                               <li>
                                    <div class="collapsible-header"><i class="material-icons">toc</i>Question 1</div>
-                                   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                                   <div id='pc1_card1' class="collapsible-body"><p></p></div>
                              </li>
                               <li>
                                    <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
-                                   <div class="collapsible-body"><p>He is cheatng! Percentage of similarity: 80%.</p></div>
+                                   <div id='pc1_card2' class="collapsible-body"></p></div>
                              </li>
                       </ul>
 
@@ -104,6 +104,10 @@
 					}
 
 					$(document).ready(function(){  
+						show(3, 'pc1_card1');  
+						setInterval('show(1, \'pc1_card1\')',4000);  
+						show(4, 'pc1_card2');  
+						setInterval('show(2, \'pc1_card2\')',4000);  
 						show(1, 'pc2_card1');  
 						setInterval('show(1, \'pc2_card1\')',5000);  
 						show(2, 'pc2_card2');  
