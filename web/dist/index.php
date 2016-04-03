@@ -43,7 +43,6 @@
          <div class="col s12 m7">
             <div class="card medium">
               <?php 
-					echo "<input id='finish_val' type='hidden' name='finish' value='false'>";
 					$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
 					date_default_timezone_set("Europe/Helsinki"); 
 					$time=time()+(3*3600);
@@ -201,6 +200,7 @@
 		</script>
 			
   <script src = "src/javascripts/materialize.js"></script>
+  <input id='finish_val' type='hidden' name='finish' value='false'>
   </form>
   </body>
 </html>
