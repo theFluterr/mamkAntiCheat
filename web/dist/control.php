@@ -74,7 +74,7 @@
 
               <div id='pc2_card' class="card-content"></div>
 				<script>  
-					var check_key="1";
+					var check_key="2";
 					function show()  
 					{  
 						$.ajax({  
