@@ -7764,12 +7764,13 @@ small {
 }
 
 .card .card-title {
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 300;
 }
 .card-title {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card .card-title.activator {
@@ -7828,7 +7829,7 @@ small {
 }
 
 .card .card-image .card-title {
-  color: #29b6f6;
+  color: #fff;
   position: absolute;
   bottom: 0;
   left: 0;
