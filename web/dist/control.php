@@ -39,7 +39,9 @@
                    <p style="font-size : 150%; color: #29b6f6;  padding-left:10%;">PC 1</p>
           			
           		</div>
-
+				<?php 
+				date_default_timezone_set("Europe/Helsinki"); 
+				?>
             	<div class="card-content">
             
                       <ul class="collapsible popout" data-collapsible="accordion">
@@ -76,17 +78,16 @@
 					<ul class="collapsible popout" data-collapsible="accordion">
 						  <li>
 							   <div class="collapsible-header"><i class="material-icons">toc</i>Question 1</div>
-							   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+							   <div id='pc2_card1' class="collapsible-body"></div>
 						 </li>
 						  <li>
 							   <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
-							   <div id='pc2_card' class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+							   <div id='pc2_card2' class="collapsible-body"></div>
 						 </li>
 					</ul>
 				</div>
 				<script>  
-					var check_key="2";
-					function show()  
+					function show(check_key)  
 					{  
 						$.ajax({  
 							type:"POST",
@@ -100,8 +101,10 @@
 					}
 
 					$(document).ready(function(){  
-						show();  
-						setInterval('show()',10000);  
+						show(1);  
+						setInterval('show(1)',5000);  
+						show(2);  
+						setInterval('show(2)',5000);  
 					});  
 				</script>
            

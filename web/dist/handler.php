@@ -1,23 +1,33 @@
 <?
 if(isset($_POST['check_adminKEY102ao'])) 
 {
-	$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
-	$query = "SELECT DISTINCT * FROM test_log_answers WHERE user_id='2' and question_id='1' ORDER by unix_time DESC LIMIT 1";
-	$answer = $conn->query($query);
-	if ($answer->num_rows > 0)
+	
+	if($_POST['check_adminKEY102ao']==2) 
 	{
-		while($answer_obj = $answer->fetch_assoc()) 
+		$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
+		$query = "SELECT DISTINCT * FROM test_log_answers WHERE user_id='2' and question_id='1' ORDER by unix_time DESC LIMIT 1";
+		$answer = $conn->query($query);
+		if ($answer->num_rows > 0)
 		{
-			echo '<p>'.($answer_obj['answer_value']).'</p>';
+			while($answer_obj = $answer->fetch_assoc()) 
+			{
+				echo '<p>'.($answer_obj['answer_value']).' - <b>'.(gmdate("Y-m-d H:i:s", $answer_obj['unix_time'])).'</b></p>';
+			}
 		}
 	}
-	
-	/*	  
-		  <li>
-			   <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
-			   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-		 </li>
-	</ul>*/
+	elseif($_POST['check_adminKEY102ao']==1) 
+	{
+		$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
+		$query = "SELECT DISTINCT * FROM test_log_answers WHERE user_id='2' and question_id='2' ORDER by unix_time DESC LIMIT 1";
+		$answer = $conn->query($query);
+		if ($answer->num_rows > 0)
+		{
+			while($answer_obj = $answer->fetch_assoc()) 
+			{
+				echo '<p>'.($answer_obj['answer_value']).' - <b>'.(gmdate("Y-m-d H:i:s", $answer_obj['unix_time'])).'</b></p>';
+			}
+		}
+	}
 }
 
 ?>
