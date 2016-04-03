@@ -104,12 +104,13 @@
 					}
 					function startloop(){
 						show(3, 'pc1_card1');
-						show(4, 'pc1_card2');
-						show(1, 'pc2_card1'); 
-						show(2, 'pc2_card2'); 
+						setTimeout(function(){ show(4, 'pc1_card2'); }, 1000);
+						setTimeout(function(){ show(1, 'pc2_card1'); }, 1000);
+						setTimeout(function(){ show(2, 'pc2_card2'); }, 1000);
 					}
 					$(document).ready(function(){  
-						setInterval(startloop(),5000);
+						startloop();
+						setInterval('startloop()',5000);
 					});  
 				</script>
            
