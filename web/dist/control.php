@@ -96,7 +96,10 @@
 							cache: false,  
 							success: function(html){  
 								$("#"+pccard).html(html);  
-							}  
+							},
+							error: function(html){  
+								alert('Error');
+							}
 						});  
 					}
 
