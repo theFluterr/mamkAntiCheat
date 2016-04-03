@@ -102,16 +102,14 @@
 							}
 						});  
 					}
-
+					function startloop(){
+						show(3, 'pc1_card1');
+						show(4, 'pc1_card2');
+						show(1, 'pc2_card1'); 
+						show(2, 'pc2_card2'); 
+					}
 					$(document).ready(function(){  
-						show(3, 'pc1_card1');  
-						setInterval('show(3, \'pc1_card1\')',4000);  
-						show(4, 'pc1_card2');  
-						setInterval('show(4, \'pc1_card2\')',4000);  
-						show(1, 'pc2_card1');  
-						setInterval('show(1, \'pc2_card1\')',5000);  
-						show(2, 'pc2_card2');  
-						setInterval('show(2, \'pc2_card2\')',5000);  
+						setInterval(startloop(),5000);
 					});  
 				</script>
            
