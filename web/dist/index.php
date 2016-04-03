@@ -65,7 +65,7 @@
 						$query="INSERT IGNORE INTO test_log_answers(user_id,question_id,unix_time,answer_value) VALUES ('1','1','$time','$answer_value')";
 						$conn->query($query);
 					}
-					if(isset($_POST['finish_val']) and $_POST['finish_val']=='true')
+					if(isset($_POST['finish']) and $_POST['finish']=='true')
 					{
 						$query = "INSERT INTO test_final_res(user_id,question_id,answer) SELECT user_id,question_id,answer_value FROM test_log_answers WHERE user_id='1' and question_id='1' ORDER by unix_time DESC";
 						$conn->query($query);
