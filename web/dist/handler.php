@@ -11,7 +11,7 @@ if(isset($_POST['check_adminKEY102ao']))
 		{
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
-				echo 'error';
+				echo '<p>'.($answer_obj['answer_value']).'</p>';
 			}
 		}
 	}
@@ -24,7 +24,7 @@ if(isset($_POST['check_adminKEY102ao']))
 		{
 			while($answer_obj = $answer->fetch_assoc()) 
 			{
-				echo 'error';
+				echo '<p>'.($answer_obj['answer_value']).'</p>';
 			}
 		}
 	}
