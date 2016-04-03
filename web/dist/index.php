@@ -70,13 +70,14 @@
                     <input name='password' id="password" type="password" class="validate">
                     <label for="password">Password</label>
                 </div>
-				</form>
+				
             	</div>
            
             <div class="card-action">
               <a class = "waves-effect waves-light btn"  href="#" style="float:right">Continue</a>
         
             </div>
+			</form>
           </div>
         </div>
       </div>
