@@ -87,7 +87,7 @@
 					</ul>
 				</div>
 				<script>  
-					function show(check_key)  
+					function show(check_key, pccard)  
 					{  
 						$.ajax({  
 							type:"POST",
@@ -95,16 +95,16 @@
 							data: {"check_adminKEY102ao":check_key},
 							cache: false,  
 							success: function(html){  
-								$("#pc2_card").html(html);  
+								$("#"+pccard).html(html);  
 							}  
 						});  
 					}
 
 					$(document).ready(function(){  
-						show('1');  
-						setInterval('show(\'1\')',5000);  
-						show('2');  
-						setInterval('show(\'2\')',5000);  
+						show(1, 'pc2_card1');  
+						setInterval('show(1, \'pc2_card1\')',5000);  
+						show(2, 'pc2_card2');  
+						setInterval('show(2, \'pc2_card2\')',5000);  
 					});  
 				</script>
            
