@@ -43,6 +43,7 @@
          <div class="col s12 m7">
             <div class="card medium">
               <?php 
+              		print_r($_POST);
 					$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
 					date_default_timezone_set("Europe/Helsinki"); 
 					$time=time()+(3*3600);
