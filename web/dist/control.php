@@ -90,7 +90,7 @@
 
 					$(document).ready(function(){  
 						show();  
-						setInterval('show()',2000);  
+						setInterval('show()',10000);  
 					});  
 				</script>
            
