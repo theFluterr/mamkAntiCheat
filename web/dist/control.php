@@ -72,7 +72,7 @@
                 <p style="font-size : 150%; color: #29b6f6;  padding-left:10%;">PC 2</p>
               </div>
 
-              <div class="card-content"></div>
+              <div id='pc2_card' class="card-content"></div>
 				<script>  
 					var check_key="1";
 					function show()  
@@ -83,7 +83,7 @@
 							data: {"check_adminKEY102ao":check_key},
 							cache: false,  
 							success: function(html){  
-								$("#card-content").html(html);  
+								$("#pc2_card").html(html);  
 							}  
 						});  
 					}
