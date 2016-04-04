@@ -1,4 +1,14 @@
 <?php 
+	if($_POST['logout']=='true')
+	{
+		session_start();
+		session_unset();
+		session_destroy();
+		session_write_close();
+		setcookie(session_name(),'',0,'/');
+		session_regenerate_id(true);
+		header('Location:http://mamk-acs.cloudapp.net/');
+	}
 	$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
 	session_start();
 	if(isset($_SESSION['user_key']))
@@ -143,15 +153,21 @@
          </div>
         </div>
       </div>
+		<form style='visibility:hidden;' id='logout' action='#' method='post'>
+			<input type='hidden' name='logout' value='true'>
+		</form>
 
 
-
-                  <div class="fixed-action-btn tooltipped submit-btn" style="bottom:15px" data-position="top" data-delay="50" data-tooltip="Exit">
+                  <div id='logoutb' class="fixed-action-btn tooltipped submit-btn" style="bottom:15px" data-position="top" data-delay="50" data-tooltip="Exit">
                       <a class="btn-floating  btn-large blue waves-effect waves-light blue " >
                             <i class="large material-icons">power_settings_new</i>
                      </a>   
 
-
+		<script>
+			document.getElementById("logoutb").addEventListener("click", function(){
+				setTimeout(function() { document.getElementById("logout").submit() }, 500)
+			});
+		</script>
   <script src = "src/javascripts/materialize.js"></script>
   </body>
 </html>
