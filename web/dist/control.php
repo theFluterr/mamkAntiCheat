@@ -1,3 +1,23 @@
+<?php 
+	$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
+	session_start();
+	if(isset($_SESSION['user_key']))
+	{
+		$query = "SELECT DISTINCT id FROM SPMas_users WHERE special_key='".($_SESSION['user_key'])."' LIMIT 1";
+		$id_val = $conn->query($query);
+		if ($id_val->num_rows > 0)
+		{
+			while($id_obj = $id_val->fetch_assoc()) 
+			{
+				$userid=$id_obj['id'];
+			}
+		}
+	}
+	else{
+		header('Location:http://mamk-acs.cloudapp.net/');
+	}
+	if($userid!='3') header('Location:http://mamk-acs.cloudapp.net/');
+?>
 <!DOCTYPE html>
 <html>
   <head>

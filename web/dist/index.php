@@ -2,15 +2,24 @@
 	if(isset($_POST['username']) and isset($_POST['password']))
 	{
 		$conn = new mysqli('localhost', 'root', 'matti', 'mamk_acs');
-		$query = "SELECT DISTINCT special_key FROM SPMas_users WHERE username='".($_POST['username'])."' and password='".($_POST['password'])."' LIMIT 1";
+		$query = "SELECT DISTINCT special_key,id FROM SPMas_users WHERE username='".($_POST['username'])."' and password='".($_POST['password'])."' LIMIT 1";
 		$special_key = $conn->query($query);
 		if ($special_key->num_rows > 0)
 		{
 			while($special_key_obj = $special_key->fetch_assoc()) 
 			{
-				session_start();
-				$_SESSION['user_key']=$special_key_obj['special_key'];
-				header('Location:http://mamk-acs.cloudapp.net/page.php');
+				if($special_key_obj['id']=='3')
+				{
+					session_start();
+					$_SESSION['user_key']=$special_key_obj['special_key'];
+					header('Location:http://mamk-acs.cloudapp.net/control.php');
+				}
+				else
+				{
+					session_start();
+					$_SESSION['user_key']=$special_key_obj['special_key'];
+					header('Location:http://mamk-acs.cloudapp.net/page.php');
+				}
 			}
 		}
 	}
