@@ -84,3 +84,15 @@ body {
         	 -webkit-text-stroke-width: 1px;
    			-webkit-text-stroke-color: black;
         }
+
+        .dashboard-container {
+        	width: 70%;
+        	margin-left: auto;
+        	margin-right: auto;
+        	margin-top: 60px;
+        }
+
+        .dashboard-header-text {
+          color: #29b6f6;
+          font-size: 120%;
+        }

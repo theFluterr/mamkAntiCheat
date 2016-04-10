@@ -9,15 +9,23 @@
 
     <script src="src/javascripts/jquery-2.2.0.min.js"></script>
   </head>
-  
 
-  	<body>
+    	<body>
+
+        <ul id="dropdown1" class="dropdown-content">
+                <li><a href="textbased.html">Question 23</a></li>
+                <li><a href="index.html">Question 24</a></li> 
+        </ul>
   
           <nav class="light-blue lighten-1" role="navigation">
              <div class="nav-wrapper container"><a id="logo-container" href="#" class="right hide-on-med-and-down"><img src="src/assets/logo4.png" height="180px" width="180px" class = "logo-pic"></a> 
 
-                           <ul class="brand-logo">   
-    		                 <div class="top-title"><p align= "right">OSPF Exam: Teachers panel</p></div>
+                   <ul class="left hide-on-med-and-down">
+                         <li><a class="dropdown-button" href="#!" hover = "true" data-activates="dropdown1">Go to question<i class="material-icons right">arrow_drop_down</i></a></li>
+                  </ul>
+                
+                   <ul class="brand-logo">   
+    		                 <div class="top-title"><p align= "left">Create Exam</p></div>
                    </ul>
  
 
@@ -29,81 +37,65 @@
             </div>
          </nav>
 
-<div class="teacher-screen-card"> 
-		<div class="row">
-       	 <div class="col s6 " style="float:left;">
-       	 	 <div class="card large">
-       		 
-        
-          		<div class="card-image">
-                   <p style="font-size : 150%; color: #29b6f6;  padding-left:10%;">PC 1</p>
-          			
-          		</div>
 
-            	<div class="card-content">
-            
-                      <ul class="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                   <div class="collapsible-header"><i class="material-icons">toc</i>Question 1</div>
-                                   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                             </li>
-                              <li>
-                                   <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
-                                   <div class="collapsible-body"><p>He is cheatng! Percentage of similarity: 80%.</p></div>
-                             </li>
-                      </ul>
+         <div class="dashboard-container">
+         			<a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="right" data-delay="50" data-tooltip="Add"><i class="material-icons">add</i></a>
 
-            	</div>
-           
-            <div class="card-action">
-                <a class = "waves-effect waves-light btn"  href="#" style="margin-left: 35%;">block</a>
-        
-            </div>
-          </div>
+         			<ul class="collapsible" style="margin-top: 20px;" data-collapsible = "accordition">
+    						<li class="collection-item avatar">
+      							<div class="collapsible-header">
+      								<span class="title dashboard-header-text">Question 1</span>
+     								 <p style="margin-top:-20px;">Multiple Choise<br>
+         								Where do we usually use OSPF routing protocol?
+     								 </p>
+      								<a href="#!" class="secondary-content"></a>
+      							</div>
+      							<div class="collapsible-body">
+      								<p>In automobiles <br>
+      									In the kitchen <br>
+      									Near Microsoft Office <br>
+      									When interconnecting the networks (CORRECT)<br>
+      									While walking with the dog in the park</p>
+      							</div>
+    						</li>
+    						<li class="collection-item avatar">
+     							<div class="collapsible-header">
+      								 <span class="title dashboard-header-text">Question 2</span>
+     								 <p style="margin-top:-20px;">Text-based <br>
+        							    Explain how OSPF works in multi-area networks
+      								 </p>
+      								<a href="#!" class="secondary-content"></a>
+      							</div>
+      							<div class="collapsible-body"> 
+      								<p>Your answer</p>
+      							</div>
+    						</li>
+    						<li class="collection-item avatar">
+      								<div class="collapsible-header">
+      									<span class="title dashboard-header-text">Question 3</span>
+      									<p style="margin-top:-20px;">Image-based<br>
+       								 	  Describe the topology
+     									 </p>
+      									<a href="#!" class="secondary-content"></a>
+      								</div>
+      								<div class="collapsible-body"> 
+      									<p>Some text</p>
+      							</div>
+    						</li>
+   							<li class="collection-item avatar">
+      								<div class="collapsible-header">
+     								 	<span class="title dashboard-header-text">Question 4</span>
+      									<p style="margin-top:-20px;">Type of question<br>
+         								Question title
+      									</p>
+      									<a href="#!" class="secondary-content"></a>
+      								</div>
+      								<div class="collapsible-body"> 
+      									<p>Some text</p>
+      							</div>
+    						</li>
+  					</ul>
          </div>
-      
-
-         <div class="col s6" style = "float:right; margin-top:-15px">
-           <div class="card large">
-           
-        
-              <div class="card-image">
-
-                <p style="font-size : 150%; color: #29b6f6;  padding-left:10%;">PC 2</p>
-              </div>
-
-              <div class="card-content">
-                            
-                      <ul class="collapsible popout" data-collapsible="accordion">
-                              <li>
-                                   <div class="collapsible-header"><i class="material-icons">toc</i>Question 1</div>
-                                   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                             </li>
-                              <li>
-                                   <div class="collapsible-header"><i class="material-icons">report_problem</i>Question 2</div>
-                                   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                             </li>
-                      </ul>
-              </div>
-           
-            <div class="card-action">
-                    <a class = "waves-effect waves-light btn"  href="#" style="margin-left: 35%;">block</a>
-        
-        
-            </div>
-          </div>
-         </div>
-        </div>
-      </div>
-
-
-
-                  <div class="fixed-action-btn tooltipped submit-btn" style="bottom:15px" data-position="top" data-delay="50" data-tooltip="Exit">
-                      <a class="btn-floating  btn-large blue waves-effect waves-light blue " >
-                            <i class="large material-icons">power_settings_new</i>
-                     </a>   
-
-
-  <script src = "src/javascripts/materialize.js"></script>
+     <script src = "src/javascripts/materialize.js"></script>
   </body>
 </html>
