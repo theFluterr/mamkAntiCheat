@@ -39,7 +39,7 @@
 
 
          <div class="dashboard-container">
-         			<a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="right" data-delay="50" data-tooltip="Add"><i class="material-icons">add</i></a>
+         			<a class="modal-trigger btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="right" data-delay="50" data-tooltip="Add" href="#modal1"><i class="material-icons">add</i></a>
 
          			<ul class="collapsible" style="margin-top: 20px;" data-collapsible = "accordition">
     						<li class="collection-item avatar">
@@ -96,6 +96,26 @@
     						</li>
   					</ul>
          </div>
+
+          <div id="modal1" class="modal modal-fixed-footer">
+         <div class="modal-content">
+            <h4>New question</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          
+            <a class='dropdown-button btn' href='#' hover = "false" data-activates='dropdown2'>choose type</a>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown2' class='dropdown-content' style="margin-top: -15px;">
+                     <li><a href="#!">Multiple-Choise</a></li>
+                     <li><a href="#!">Text-Based</a></li>
+                     <li><a href="#!">Image-based</a></li>
+                </ul>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Add</a>
+        </div>
+      </div>
      <script src = "src/javascripts/materialize.js"></script>
+     <script src = "src/javascripts/init.js"></script>
   </body>
 </html>
